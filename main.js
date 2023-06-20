@@ -16,25 +16,70 @@ function jugarDeNuevo(){
         jugarDeNuevo(); 
     }
 }
-
-function ultimoIntento(){
-    let intento = Number (prompt("ULTIMO INTENTO: Ingresa un número"));
-    if(intento === numeroSecreto){
-        alert ("CORRECTO! Adivinaste el número!");
-    }else{
-        alert("Agotaste tus intentos. El número era " + numeroSecreto);
+function ultimoIntento() {
+    let intentos = 0;
+    while (intentos < 3) {
+      let mensaje;
+      if (intentos === 0) {
+        mensaje = "Intenta con otro número";
+      } else if(intentos===1){
+        mensaje = "Incorrecto: Prueba otra vez";
+      }else {
+        mensaje = "Incorrecto: Ultimo intento."
+      }
+      let intento = Number(prompt(mensaje));
+      intentos++;
+      console.log(intentos);
+      if (intento === numeroSecreto) {
+        alert("¡CORRECTO! Adivinaste el número!");
+        jugarDeNuevo();
+        return; 
+      }
     }
+    alert("Agotaste tus intentos! El número era " + numeroSecreto);
     jugarDeNuevo();
-}
+  }
+  
+// ------------------------------------------------------
+// function ultimoIntento() {
+//     let intentos = 0;
+//     while (intentos < 3) {
+//       let intento = Number(prompt("Incorrecto: Ingresa otro intento"));
+//       intentos++;
+//       console.log(intentos);
+//       if (intento === numeroSecreto) {
+//         alert("¡CORRECTO! Adivinaste el número!");
+//         jugarDeNuevo();
+//         return; // Se sale de la función después de un intento exitoso
+//       }
+//     }
+//     alert("Agotaste tus intentos. El número era " + numeroSecreto);
+//     jugarDeNuevo();
+//   }
+// -----------------------------------  
+// function ultimoIntento(){
+//     let intentos = 0;
+//     while(intentos <3){
+//         let intento = Number (prompt("Ingresa un número"));
+//         intentos++;
+//         console.log (intentos);
+//         if(intento === numeroSecreto){
+//             alert ("CORRECTO! Adivinaste el número!");
+//         }else{
+//             alert("Agotaste tus intentos. El número era " + numeroSecreto);
+//         }
+//     }    
+//         jugarDeNuevo();
+// }
 
 function pista2(){
-        numero = Number(prompt("Ingresa un número"));
+        numero = Number(prompt("Ingresa otro número"));
         if (numeroSecreto !== numero){
             alert ("Incorrecto! No es el número. Te doy otra pista ");
             if (numeroSecreto < numero){
-                alert ("Pista 2: El numero es menor al que ingresaste.");
+                alert ("Pista 2: El número es menor al que ingresaste.");
             }else {
-                alert ("Pista 2: El numero es mayor al que ingresaste.");
+                alert ("Pista 2: El número es mayor al que ingresaste.");
             }
         } else{
             alert ("CORRECTO! Adivinaste el número!");
@@ -44,7 +89,7 @@ function pista2(){
 }   
 
 function ingresarNumero(){
-        numero = Number(prompt("Ingresa un número"));
+        numero = Number(prompt("Comenzemos! Ingresa un número"));
         if (numeroSecreto !== numero){
             alert ("Incorrecto! No es el número. Te doy una pista");
             if(numeroSecreto % 2 === 0){
