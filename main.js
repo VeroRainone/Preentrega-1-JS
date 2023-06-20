@@ -39,38 +39,6 @@ function ultimoIntento() {
     alert("Agotaste tus intentos! El número era " + numeroSecreto);
     jugarDeNuevo();
   }
-  
-// ------------------------------------------------------
-// function ultimoIntento() {
-//     let intentos = 0;
-//     while (intentos < 3) {
-//       let intento = Number(prompt("Incorrecto: Ingresa otro intento"));
-//       intentos++;
-//       console.log(intentos);
-//       if (intento === numeroSecreto) {
-//         alert("¡CORRECTO! Adivinaste el número!");
-//         jugarDeNuevo();
-//         return; // Se sale de la función después de un intento exitoso
-//       }
-//     }
-//     alert("Agotaste tus intentos. El número era " + numeroSecreto);
-//     jugarDeNuevo();
-//   }
-// -----------------------------------  
-// function ultimoIntento(){
-//     let intentos = 0;
-//     while(intentos <3){
-//         let intento = Number (prompt("Ingresa un número"));
-//         intentos++;
-//         console.log (intentos);
-//         if(intento === numeroSecreto){
-//             alert ("CORRECTO! Adivinaste el número!");
-//         }else{
-//             alert("Agotaste tus intentos. El número era " + numeroSecreto);
-//         }
-//     }    
-//         jugarDeNuevo();
-// }
 
 function pista2(){
         numero = Number(prompt("Ingresa otro número"));
